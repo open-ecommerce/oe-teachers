@@ -11,8 +11,5 @@
       "homepage": "http://www.open-ecommerce.org"
     }
   ],
-  "type": "wordpress-plugin",
-  "require": {
-    "composer/installers": "~1.5.1"
-  }
+  "type": "wordpress-plugin"
 }
