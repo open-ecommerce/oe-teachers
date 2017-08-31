@@ -48,23 +48,23 @@ function create_teachers() {
 add_filter('template_include', 'include_template_function', 1);
 
 function include_template_Teacher($template_path) {
-    if (get_post_type() == 'stories') {
+    if (get_post_type() == 'teachers') {
         if (is_single()) {
             if ($theme_file = locate_template(array
-                ('single-stories.php'))) {
+                ('single-teachers.php'))) {
                 $template_path = $theme_file;
             } else {
-                $template_path = plugin_dir_path(__FILE__) . '/single-Teacher.php';
+                $template_path = plugin_dir_path(__FILE__) . '/single-teachers.php';
             }
         }
     }
     return $template_path;
 }
 
-function stories_rewrite_flush() {
-    create_stories();
+function teachers_rewrite_flush() {
+    create_teachers();
     flush_rewrite_rules();
 }
 
-register_activation_hook(__FILE__, 'stories_rewrite_flush')
+register_activation_hook(__FILE__, 'teachers_rewrite_flush')
 ?>
