@@ -2,7 +2,7 @@
 /*
   Plugin Name: Teachers
   Plugin URI: http://open-ecommerce.org/
-  Description: Declares a plugin that will create a custom post type stories.
+  Description: Declares a plugin that will create a custom post type teachers.
   Version: 1.0
   Author: Eduardo G. Silva
   Author URI: http://open-ecommerce.org/
@@ -44,10 +44,9 @@ function create_teachers() {
     );
 }
 
+add_filter('template_include', 'include_template_teacher', 1);
 
-add_filter('template_include', 'include_template_function', 1);
-
-function include_template_Teacher($template_path) {
+function include_template_teacher($template_path) {
     if (get_post_type() == 'teachers') {
         if (is_single()) {
             if ($theme_file = locate_template(array
